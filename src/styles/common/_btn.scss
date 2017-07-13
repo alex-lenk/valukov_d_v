@@ -1,0 +1,156 @@
+@import "variables";
+@import "mixin";
+
+.btn {
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    &-blue {
+        padding: 14px 27px;
+        font-size: 22px;
+        background-color: #1a56d6;
+        color: #fff;
+        position: relative;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        overflow: hidden;
+        @include RobotoCondensedBold;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.5s;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+        span {
+            position: relative;
+            z-index: 4;
+        }
+        &:hover, &:active, &:focus {
+            color: #1a56d6;
+            border-color: #1a56d6;
+            &::after {
+                height: 250px;
+                opacity: 1;
+            }
+        }
+    }
+    &-red {
+        padding: 10px 25px;
+        font-size: 22px;
+        background-color: #df4e44;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        @include RobotoCondensedBold;
+        span {
+            position: relative;
+            z-index: 4;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background: #fff;
+            opacity: 0;
+            transition: all 0.5s;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+        &:hover, &:active, &:focus {
+            color: #df4e44;
+            border-color: #df4e44;
+            &::after {
+                height: 250px;
+                opacity: 1;
+            }
+        }
+    }
+    
+    &-light {
+        width: 100%;
+        padding: 4px 10px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25), 0 0 3px 0 rgba(17, 17, 17, 0.25);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s;
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 0;
+            top: 50%;
+            left: 50%;
+            background: $pink;
+            opacity: 0;
+            transition: all 0.5s;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+        span {
+            margin-right: auto;
+            position: relative;
+            z-index: 4;
+            align-self: center;
+        }
+        .icon-call {
+            width: 36px;
+            height: 36px;
+            margin-right: 15px;
+            stroke: $pink;
+            position: relative;
+            z-index: 5;
+            transition: all 0.5s;
+            margin-left: auto;
+        }
+        &:hover, &:active, &:focus {
+            color: #fff;
+            &::after {
+                height: 250px;
+                opacity: 1;
+            }
+            .icon-call {
+                stroke: #fff;
+            }
+        }
+    }
+    &-pink {
+        height: 36px;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 4px;
+        font-weight: bold;
+        background-color: $pink;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+        &:hover, &:active, &:focus {
+            box-shadow: none;
+            background-color: #fff;
+            color: $pink;
+            border-color: $pink;
+        }
+    }
+}
